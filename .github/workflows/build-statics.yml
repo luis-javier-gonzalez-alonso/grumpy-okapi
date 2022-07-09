@@ -14,17 +14,19 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Clean public folder
+      - name: Clean
         run: rm -rf public/*
         
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
 
-      - name: Build statics
+      - name: Build
         run: hugo --minify
       
       - name: Deploy
-        run: |
-          git config user.email ci@devops.io
-          git config user.name ci
-          cd public && git add . && git commit -m "- Updates site" && git push
+        uses: github-actions-x/commit@v2.9
+        with:
+          github-token:  ${{ secrets.CI_PAT }}
+          commit-message: "- Updates site"
+          email: ci@actions.github.com
+          name: ci
