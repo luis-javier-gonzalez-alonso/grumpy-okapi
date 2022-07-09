@@ -24,4 +24,7 @@ jobs:
         run: hugo --minify
       
       - name: Deploy
-        run: cd public && git add . && git commit -m "- Updates site" && git push
+        run: |
+          git config user.email ci@devops.io
+          git config user.name ci
+          cd public && git add . && git commit -m "- Updates site" && git push
