@@ -12,21 +12,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
+          token: ${{ secrets.CI_PAT }}
           submodules: recursive
 
       - name: Clean
         run: rm -rf public/*
-        
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
-
       - name: Build
         run: hugo --minify
-      
-      - name: Deploy
-        uses: github-actions-x/commit@v2.9
-        with:
-          github-token:  ${{ secrets.CI_PAT }}
-          commit-message: "- Updates site"
-          email: ci@actions.github.com
-          name: ci
+
+      - name: Push statics
+        run: |
+          git config --global user.name ci
+          git config --global user.email 'ci@actions.github.com'
+          git add public
+          git commit -am "- Updates site"
+          git push
