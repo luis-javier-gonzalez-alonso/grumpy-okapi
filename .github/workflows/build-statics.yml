@@ -26,6 +26,4 @@ jobs:
         run: |
           git config --global user.name ci
           git config --global user.email 'ci@actions.github.com'
-          git submodule foreach git add .
-          git submodule foreach git commit -am "- Updates site"
-          git submodule foreach git push
+          pushd public && git add . && git commit -am "- Updates site" && git push && popd
