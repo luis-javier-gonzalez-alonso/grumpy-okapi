@@ -22,10 +22,10 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Push statics
+      - name: Push submodules
         run: |
           git config --global user.name ci
           git config --global user.email 'ci@actions.github.com'
-          git add public
-          git commit -am "- Updates site"
-          git push
+          git submodule foreach git add .
+          git submodule foreach git commit -am "- Updates site"
+          git submodule foreach git push
