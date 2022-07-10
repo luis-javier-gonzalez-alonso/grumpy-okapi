@@ -26,4 +26,5 @@ jobs:
         run: |
           git config --global user.name ci
           git config --global user.email 'ci@actions.github.com'
+          git submodule update public
           pushd public && git add . && git commit -am "- Updates site" && git push && popd
