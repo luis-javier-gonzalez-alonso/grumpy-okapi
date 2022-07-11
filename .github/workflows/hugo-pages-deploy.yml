@@ -1,0 +1,66 @@
+name: hugo-pages-deploy
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          repository: luis-javier-gonzalez-alonso/grumpy-okapi
+          token: ${{ secrets.CI_PAT }}
+          ssh-strict: true
+          persist-credentials: true
+          clean: true
+          fetch-depth: 1
+          lfs: false
+          set-safe-directory: true
+      
+      - name: Clean up
+        run: rm -rf public/ && mkdir -p public
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+      - name: Build
+        run: hugo --minify
+
+      - uses: actions/upload-pages-artifact@v0
+        with:
+          path: public
+          retention-days: 1
+          
+      - run: tar --dereference --hard-dereference --directory public \
+          -cvf /home/runner/work/_temp/artifact.tar public
+
+      - uses: actions/upload-artifact@main
+        with:
+          name: github-pages
+          path: /home/runner/work/_temp/artifact.tar
+          retention-days: 1
+          if-no-files-found: warn
+
+  deploy-build-status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/deploy-pages@v1
+        with:
+          emit_telemetry: true
+          token: ${{ secrets.CI_PAT }}
+          timeout: 600000
+          error_count: 10
+          reporting_interval: 5000
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/deploy-pages@v1
+        with:
+          emit_telemetry: false
+          token: ${{ secrets.CI_PAT }}
+          timeout: 600000
+          error_count: 10
+          reporting_interval: 5000
