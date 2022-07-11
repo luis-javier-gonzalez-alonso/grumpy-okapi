@@ -13,7 +13,7 @@ jobs:
         with:
           submodules: recursive
           repository: luis-javier-gonzalez-alonso/grumpy-okapi
-          token: ${{ secrets.CI_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           ssh-strict: true
           persist-credentials: true
           clean: true
@@ -50,7 +50,7 @@ jobs:
       - uses: actions/deploy-pages@v1
         with:
           emit_telemetry: true
-          token: ${{ secrets.CI_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           timeout: 600000
           error_count: 10
           reporting_interval: 5000
@@ -62,7 +62,7 @@ jobs:
       - uses: actions/deploy-pages@v1
         with:
           emit_telemetry: false
-          token: ${{ secrets.CI_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           timeout: 600000
           error_count: 10
           reporting_interval: 5000
