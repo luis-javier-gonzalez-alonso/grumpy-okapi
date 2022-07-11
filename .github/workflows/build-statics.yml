@@ -15,15 +15,21 @@ jobs:
           token: ${{ secrets.CI_PAT }}
           submodules: recursive
 
-      - name: Clean
-        run: rm -rf public/*
+      - name: Clean public folder
+        run: |
+          git config --global user.name ci
+          git config --global user.email 'ci@actions.github.com'
+          pushd public && git checkout gh-pages && git pull -r && rm -rf ./* && popd
+          echo "Cleaned public folder"
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
       - name: Build
         run: hugo --minify
 
-      - name: Push submodules
+      - name: Deploy
         run: |
           git config --global user.name ci
           git config --global user.email 'ci@actions.github.com'
           pushd public && git add . && git commit -m "- Updates site" && git push origin HEAD:gh-pages && popd
+          echo "Pushed public changes"
