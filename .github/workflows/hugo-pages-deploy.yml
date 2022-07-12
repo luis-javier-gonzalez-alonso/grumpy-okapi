@@ -6,7 +6,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  id-token: write
+  pages: write
 
 jobs:
   build:
@@ -21,7 +22,40 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - uses: actions/upload-pages-artifact@v0
         with:
-          folder: public
+          path: .
+          retention-days: 1
+
+      - run: tar --dereference --hard-dereference -C public -cvf /home/runner/work/_temp/artifact.tar .
+
+      - uses: actions/upload-artifact@main
+        with:
+          name: github-pages
+          path: /home/runner/work/_temp/artifact.tar
+          retention-days: 1
+          if-no-files-found: warn
+
+  deploy-build-status:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/deploy-pages@v1
+        with:
+          emit_telemetry: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          timeout: 600000
+          error_count: 10
+          reporting_interval: 5000
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: deploy-build-status
+    steps:
+      - uses: actions/deploy-pages@v1
+        with:
+          emit_telemetry: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          timeout: 600000
+          error_count: 10
+          reporting_interval: 5000
