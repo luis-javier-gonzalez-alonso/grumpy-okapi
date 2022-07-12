@@ -27,9 +27,6 @@ jobs:
           cd public
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          if [ "`git status -s`" ]
-          then
-            git add --all
-            git commit -am "- Updates site"
-            git push --all
-          fi
+          git add --all
+          git commit -m "- Updates site"
+          git push --all
