@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,8 +15,23 @@ jobs:
           clean: true
 
       - uses: peaceiris/actions-hugo@v2
-      - uses: sterlingwes/gh-pages-deploy-action@v1.1
-        with:
-          access-token: ${{ secrets.CI_PAT }}
-          source-directory: public
-          build-command: hugo --minify
+      - name: Setup public folder
+        run: |
+          rm -rf public/
+          git worktree add public gh-pages
+          git rm -rf public/*
+
+      - name: Build Hugo site
+        run: hugo --minify
+
+      - name: Deploy to gh-pages branch
+        run: |
+          cd public
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          if [ "`git status -s`" ]
+          then
+            git add --all
+            git commit -am "- Updates site"
+            git push --all
+          fi
