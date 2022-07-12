@@ -27,6 +27,8 @@ jobs:
           cd public
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          pwd
+          git status
           git add --all
           git commit -m "- Updates site"
           git push --all
