@@ -15,14 +15,9 @@ jobs:
           clean: true
 
       - uses: peaceiris/actions-hugo@v2
-      - name: Setup public folder
-        run: |
-          rm -rf public/
-          git worktree add public gh-pages
-          git rm -rf public/*
-
+      - run: git worktree add public gh-pages
       - name: Build Hugo site
-        run: hugo --minify
+        run: hugo --minify --cleanDestinationDir
 
       - name: Deploy to gh-pages branch
         run: |
