@@ -14,14 +14,15 @@ jobs:
           submodules: recursive
           clean: true
 
-      - run: git branch
-
       - uses: peaceiris/actions-hugo@v2
-      - run: git worktree add public gh-pages
+      - name: Set up deploy branch
+        run: |
+          git fetch origin gh-pages
+          git worktree add public gh-pages
       - name: Build Hugo site
         run: hugo --minify --cleanDestinationDir
 
-      - name: Deploy to gh-pages branch
+      - name: Deploy to gh-pages
         run: |
           cd public
           git config user.name "${GITHUB_ACTOR}"
