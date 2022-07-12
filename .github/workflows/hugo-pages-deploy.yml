@@ -38,7 +38,7 @@ jobs:
           retention-days: 1
           
       - run: |
-          tar --dereference --hard-dereference --directory . -cvf /home/runner/work/_temp/artifact.tar public/*
+          tar --dereference --hard-dereference --directory public -cvf /home/runner/work/_temp/artifact.tar public/*
 
       - uses: actions/upload-artifact@main
         with:
