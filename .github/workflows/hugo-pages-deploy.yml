@@ -41,6 +41,7 @@ jobs:
           pwd
           git status
           ls -la
+          ls -la /home/runner/work/_temp/
           #git add --all
           #git commit -m "- Updates site"
           #git push --all
