@@ -18,9 +18,8 @@ jobs:
       - name: Build Hugo site
         run: hugo --minify --cleanDestinationDir
         
-      - name: Package site
+      - name: Package artifact
         run: tar --dereference --hard-dereference  -C public -cvzf /home/runner/work/_temp/artifact.tgz .
-
       - uses: actions/upload-artifact@v2
         with:
           name: github-pages
@@ -49,11 +48,6 @@ jobs:
         run: |
           git config user.name "ci"
           git config user.email "ci@actions.gh"
-          pwd
-          git status
-          ls -la
-          ls -la /home/runner/work/_temp/
-          #git add --all
-          #git commit -m "- Updates site"
-          #git push --all
-
+          git add .
+          git commit -m "- Updates site"
+          git push
