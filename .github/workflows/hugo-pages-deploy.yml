@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,21 +14,34 @@ jobs:
           submodules: recursive
           clean: true
 
-      - name: Set up deploy branch
-        run: |
-          git fetch origin gh-pages
-          git worktree add public gh-pages
       - uses: peaceiris/actions-hugo@v2
       - name: Build Hugo site
         run: hugo --minify --cleanDestinationDir
+        
+      - name: Package site
+        run: tar --dereference --hard-dereference  -C public -cvf /home/runner/work/_temp/artifact.tar .
+
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: github-pages
+#           path: /home/runner/work/_temp/artifact.tar
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          clean: true
 
       - name: Deploy to gh-pages
         run: |
-          cd public
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           pwd
           git status
-          git add --all
-          git commit -m "- Updates site"
-          git push --all
+          ls -la
+          #git add --all
+          #git commit -m "- Updates site"
+          #git push --all
+
