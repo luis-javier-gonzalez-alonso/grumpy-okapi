@@ -19,12 +19,12 @@ jobs:
         run: hugo --minify --cleanDestinationDir
         
       - name: Package site
-        run: tar --dereference --hard-dereference  -C public -cvf /home/runner/work/_temp/artifact.tar .
+        run: tar --dereference --hard-dereference  -C public -cvzf /home/runner/work/_temp/artifact.tgz .
 
       - uses: actions/upload-artifact@v2
         with:
           name: github-pages
-          path: /home/runner/work/_temp/artifact.tar
+          path: /home/runner/work/_temp/artifact.tgz
 
   deploy:
     runs-on: ubuntu-latest
@@ -40,9 +40,9 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: github-pages
-          path: /home/runner/work/_temp/artifact.tar
+          path: /home/runner/work/_temp/artifact.tgz
 
-      - run: tar xvf /home/runner/work/_temp/artifact.tar
+      - run: tar -xvf /home/runner/work/_temp/artifact.tgz
 
       - name: Deploy to gh-pages
         run: |
