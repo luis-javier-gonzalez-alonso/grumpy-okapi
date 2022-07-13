@@ -34,10 +34,15 @@ jobs:
         with:
           ref: gh-pages
           clean: true
+          
+      - run: rm -rf *
 
       - uses: actions/download-artifact@v2
         with:
           name: github-pages
+          path: /home/runner/work/_temp/artifact.tar
+
+      - run: tar xvf /home/runner/work/_temp/artifact.tar
 
       - name: Deploy to gh-pages
         run: |
