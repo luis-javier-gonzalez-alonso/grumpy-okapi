@@ -1,4 +1,48 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on /ˈtɛknɪkəl ˈraɪtɪŋ/</title><link>https://luis-javier-gonzalez-alonso.github.io/grumpy-okapi/posts/</link><description>Recent content in Posts on /ˈtɛknɪkəl ˈraɪtɪŋ/</description><generator>Hugo -- gohugo.io</generator><language>en-GB</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 11 Jul 2022 00:45:00 +0100</lastBuildDate><atom:link href="https://luis-javier-gonzalez-alonso.github.io/grumpy-okapi/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Starting with GitHub Pages</title><link>https://luis-javier-gonzalez-alonso.github.io/grumpy-okapi/posts/starting-with-github-pages/</link><pubDate>Mon, 11 Jul 2022 00:45:00 +0100</pubDate><guid>https://luis-javier-gonzalez-alonso.github.io/grumpy-okapi/posts/starting-with-github-pages/</guid><description>There are plenty of resources online to get a good idea of how to set GH Pages up.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on /ˈtɛknɪkəl ˈraɪtɪŋ/</title><link>https://luis-javier-gonzalez-alonso.github.io/grumpy-okapi/posts/</link><description>Recent content in Posts on /ˈtɛknɪkəl ˈraɪtɪŋ/</description><generator>Hugo -- gohugo.io</generator><language>en-GB</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 13 Jul 2022 23:40:00 +0100</lastBuildDate><atom:link href="https://luis-javier-gonzalez-alonso.github.io/grumpy-okapi/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Using Hugo to generate the static site</title><link>https://luis-javier-gonzalez-alonso.github.io/grumpy-okapi/posts/using-hugo-to-generate-the-site/</link><pubDate>Wed, 13 Jul 2022 23:40:00 +0100</pubDate><guid>https://luis-javier-gonzalez-alonso.github.io/grumpy-okapi/posts/using-hugo-to-generate-the-site/</guid><description>Based on my experience, starting to use Hugo is quite accessible. See quick-start.
+There are plenty of themes to part from, and they are simple to configure to your liking (just following the instructions in each Theme). For those already used to writing Markdown documents, using Hugo is straightforward. It gives a clean façade to those parsed documents and lets you navigate and cross-reference them.
+As an example: Using Hermit theme The default theme style matched the aesthetic I was looking for, so my configurations were more data related in this case.</description><content type="html"><![CDATA[<p>Based on my experience, starting to use <a href="https://gohugo.io/">Hugo</a> is quite accessible. See <a href="https://gohugo.io/getting-started/quick-start/">quick-start</a>.</p>
+<p>There are plenty of themes to part from, and they are simple to configure to your liking (just following the instructions in each Theme).
+For those already used to writing Markdown documents, using Hugo is straightforward.
+It gives a clean façade to those parsed documents and lets you navigate and cross-reference them.</p>
+<h2 id="as-an-example-using-hermit-theme">As an example: Using Hermit theme</h2>
+<p>The default theme style matched the aesthetic I was looking for, so my configurations were more data related in this case.</p>
+<p>I started with the indicated configuration in the README.md of Hermit&rsquo;s Github repository and adapted it as follows:</p>
+<pre tabindex="0"><code>title = &#39;/ˈtɛknɪkəl ˈraɪtɪŋ/&#39;
+theme = &#39;hermit&#39;
+
+[author]
+  name = &#34;Luis J. González&#34;
+
+[taxonomies]
+  tag = &#34;tags&#34;
+
+[params]
+  dateform        = &#34;Jan 2, 2006&#34;
+  dateformShort   = &#34;Jan 2&#34;
+  dateformNum     = &#34;2006-01-02&#34;
+  dateformNumTime = &#34;2006-01-02 15:04 -0700&#34;
+
+  themeColor = &#34;#494f5c&#34;
+  homeSubtitle = &#34;Notes for myself and whoever may find them useful&#34;
+  footerCopyright = &#39; &amp;#183; &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;&#39;
+
+  relatedPosts = false
+  code_copy_button = true
+
+  [[params.social]]
+    name = &#34;github&#34;
+    url = &#34;https://github.com/luis-javier-gonzalez-alonso&#34;
+
+  [[params.social]]
+    name = &#34;linkedin&#34;
+    url = &#34;https://www.linkedin.com/in/luis-javier-gonz%C3%A1lez-22a201189/&#34;
+
+[menu]
+  [[menu.main]]
+    name = &#34;Posts&#34;
+    url = &#34;posts/&#34;
+</code></pre><p>After these basic configurations, the site was ready to use.</p>
+]]></content></item><item><title>Starting with GitHub Pages</title><link>https://luis-javier-gonzalez-alonso.github.io/grumpy-okapi/posts/starting-with-github-pages/</link><pubDate>Mon, 11 Jul 2022 00:45:00 +0100</pubDate><guid>https://luis-javier-gonzalez-alonso.github.io/grumpy-okapi/posts/starting-with-github-pages/</guid><description>There are plenty of resources online to get a good idea of how to set GH Pages up.
 In short:
 Accessing Project &amp;gt; Settings &amp;gt; Pages, we need to select the branch holding the site There is a limitation on the folders to serve from this branch. We can select either &amp;lsquo;/&amp;rsquo; or &amp;lsquo;/docs&amp;rsquo; Once enabled, it will create the needed actions, and when a change happens in the selected branch, this action will update the site on GitHub servers Uses Jekyll by default, but we can easily disable the processing by adding a &amp;lsquo;.</description><content type="html"><![CDATA[<p>There are plenty of resources online to get a good idea of how to set GH Pages up.</p>
 <p>In short:</p>
