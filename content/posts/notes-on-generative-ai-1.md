@@ -1,7 +1,7 @@
 ---
 title: "Notes on Generative AI 1"
 date: 2025-07-20T19:52:31+01:00
-draft: true
+draft: false
 toc: false
 images:
 tags: 
