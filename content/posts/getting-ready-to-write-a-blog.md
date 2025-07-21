@@ -1,7 +1,7 @@
 ---
 title: "Getting ready to write a Blog"
 date: 2022-07-09T00:31:56+01:00
-draft: false
+draft: true
 toc: false
 images:
 tags: 

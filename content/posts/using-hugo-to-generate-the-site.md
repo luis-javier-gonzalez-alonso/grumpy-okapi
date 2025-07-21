@@ -1,7 +1,7 @@
 ---
 title: "Using Hugo to generate the static site"
 date: 2022-07-13T23:40:00+01:00
-draft: false
+draft: true
 toc: false
 images:
 tags: 
