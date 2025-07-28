@@ -18,6 +18,22 @@ One of the first clarifications I want to make here, about the components you wi
 - VAE
 - ...
 
+## Composition tips and tricks
+
+From [this](https://civitai.com/articles/16602/simple-composition-tricks-to-instantly-improve-ai-images-with-prompts) article.
+
+- rule of thirds composition
+- leading lines
+- symmetrical composition
+- negative space
+- foreground, middle ground, background
+- dutch angle
+- frame within a frame / framed by
+- shallow depth of field / blurred background / bokeh background / f/1.4 / background out of focus / ...
+- golden ratio composition / fibonacci spiral composition
+- high-angle / bird’s eye view / low-angle / worm’s eye view
+- 
+
 ### Resources:
 - https://civitai.com/
 - https://huggingface.co/
