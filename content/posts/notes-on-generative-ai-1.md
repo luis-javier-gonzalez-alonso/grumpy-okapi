@@ -32,7 +32,31 @@ From [this](https://civitai.com/articles/16602/simple-composition-tricks-to-inst
 - shallow depth of field / blurred background / bokeh background / f/1.4 / background out of focus / ...
 - golden ratio composition / fibonacci spiral composition
 - high-angle / bird’s eye view / low-angle / worm’s eye view
-- 
+
+## LoRAs Usage
+
+### SD 1.5
+
+#### Details slider
+https://civitaiarchive.com/models/153562?modelVersionId=171989&is_nsfw=true
+weight: -5.0 to 5.0
+positive: more detail
+negative: less detail
+#### Hair length slider
+https://civitaiarchive.com/models/114215?modelVersionId=123434&is_nsfw=true
+weight: -8.0 to 8.0 (or more)
+positive: longer hair
+negative: shorter hair
+#### Weight slider
+https://civitaiarchive.com/models/112552?modelVersionId=126824&is_nsfw=true
+weight: -3.0 to 3.0
+positive: more weight
+negative: less weight
+#### Skin tone slider
+https://civitaiarchive.com/models/112594?modelVersionId=121575&is_nsfw=true
+weight: -5.0 to 5.0
+positive: darker
+negative: lighter
 
 ### Resources:
 - https://civitai.com/
