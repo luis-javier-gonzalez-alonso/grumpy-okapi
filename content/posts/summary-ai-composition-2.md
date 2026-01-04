@@ -6,6 +6,12 @@ toc: false
 images:
 tags:
   - Generative AI
+  - Advanced Composition
+  - Minimalism & Symmetry
+  - Patterns & Rhythm
+  - Prompt Engineering
+series:
+  - Composition Tricks to Improve AI Images
 ---
 
 *Original article: [More Simple Composition Tricks to Instantly Improve AI Images Using Prompts](https://civitai.com/articles/16682/more-simple-composition-tricks-to-instantly-improve-ai-images-using-prompts)*

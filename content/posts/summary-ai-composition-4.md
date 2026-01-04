@@ -6,6 +6,12 @@ toc: false
 images:
 tags:
   - Generative AI
+  - Emotional Storytelling
+  - Narrative Composition
+  - Visual Psychology
+  - Prompt Design
+series:
+  - Composition Tricks to Improve AI Images
 ---
 
 *Original article: [Intermediate Emotional & Narrative Composition Techniques for AI Images Using Prompts](https://civitai.com/articles/16771/intermediate-emotional-and-narrative-composition-techniques-for-ai-images-using-prompts)*

@@ -6,6 +6,11 @@ toc: false
 images:
 tags:
   - Generative AI
+  - Composition Basics
+  - Prompt Engineering
+  - Photography Principles
+series:
+  - Composition Tricks to Improve AI Images
 ---
 
 *Original article: [Simple Composition Tricks to Instantly Improve AI Images with Prompts](https://civitai.com/articles/16602/simple-composition-tricks-to-instantly-improve-ai-images-with-prompts)*

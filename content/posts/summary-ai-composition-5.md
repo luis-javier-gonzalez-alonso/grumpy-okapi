@@ -6,6 +6,12 @@ toc: false
 images:
 tags:
   - Generative AI
+  - Camera Angles
+  - Cinematography
+  - Dynamic Perspectives
+  - Prompt Engineering
+series:
+  - Composition Tricks to Improve AI Images
 ---
 
 *Original article: [Simple Composition Tricks to Instantly Improve AI Images with Prompts: Camera Angles Edition](https://civitai.com/articles/18078/simple-composition-tricks-to-instantly-improve-ai-images-with-prompts-camera-angles-edition)*

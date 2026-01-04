@@ -6,6 +6,12 @@ toc: false
 images:
 tags:
   - Generative AI
+  - Color Theory
+  - Mood & Atmosphere
+  - Palette Design
+  - Prompt Engineering
+series:
+  - Composition Tricks to Improve AI Images
 ---
 
 *Original article: [Simple Composition Tricks to Instantly Improve AI Images with Prompts: Color & Mood Edition](https://civitai.com/articles/18284/simple-composition-tricks-to-instantly-improve-ai-images-with-prompts-color-and-mood-edition)*

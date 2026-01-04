@@ -6,6 +6,12 @@ toc: false
 images:
 tags:
   - Generative AI
+  - Advanced Composition
+  - Visual Storytelling
+  - Color & Contrast
+  - Motion & Flow
+series:
+  - Composition Tricks to Improve AI Images
 ---
 
 *Original article: [Intermediate Composition Tricks to Instantly Improve AI Images Using Prompts](https://civitai.com/articles/16712/intermediate-composition-tricks-to-instantly-improve-ai-images-using-prompts)*

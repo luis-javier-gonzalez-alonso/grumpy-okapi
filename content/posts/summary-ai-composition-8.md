@@ -6,6 +6,12 @@ toc: false
 images:
 tags:
   - Generative AI
+  - Lighting Techniques
+  - Contrast & Chiaroscuro
+  - Cinematic Lighting
+  - Prompt Engineering
+series:
+  - Composition Tricks to Improve AI Images
 ---
 
 *Original article: [Simple Composition Tricks to Instantly Improve AI Images with Prompts – Light & Shadow Edition](https://civitai.com/articles/18530/simple-composition-tricks-to-instantly-improve-ai-images-with-prompts-light-and-shadow-edition)*

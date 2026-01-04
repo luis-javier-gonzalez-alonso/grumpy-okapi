@@ -6,6 +6,12 @@ toc: false
 images:
 tags:
   - Generative AI
+  - Texture & Materials
+  - Surface Detail
+  - Tactile Storytelling
+  - Prompt Engineering
+series:
+  - Composition Tricks to Improve AI Images
 ---
 
 *Original article: [Simple Composition Tricks to Instantly Improve AI Images with Prompts: Texture & Detail Edition](https://civitai.com/articles/18825/simple-composition-tricks-to-instantly-improve-ai-images-with-prompts-texture-and-detail-edition)*

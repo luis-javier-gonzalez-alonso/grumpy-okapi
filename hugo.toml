@@ -54,3 +54,11 @@ theme = 'hello-friend-ng'
     identifier = "blog"
     name       = "Content"
     url        = "/posts"
+  [[menu.main]]
+    identifier = "tags"
+    name       = "Topics"
+    url        = "/tags"
+  [[menu.main]]
+    identifier = "series"
+    name       = "Series"
+    url        = "/series"

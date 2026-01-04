@@ -6,6 +6,12 @@ toc: false
 images:
 tags:
   - Generative AI
+  - Perspective & Depth
+  - Vanishing Points
+  - Spatial Relationships
+  - Prompt Engineering
+series:
+  - Composition Tricks to Improve AI Images
 ---
 
 *Original article: [Simple Composition Tricks to Instantly Improve AI Images with Prompts: Perspective Edition](https://civitai.com/articles/18244/simple-composition-tricks-to-instantly-improve-ai-images-with-prompts-perspective-edition)*
