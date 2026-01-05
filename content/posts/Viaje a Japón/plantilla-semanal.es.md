@@ -1,7 +1,7 @@
 ---
 title: "{{Título de la entrada}}"
 date: 1234-12-12
-draft: false
+draft: true
 toc: false
 images:
 series: Viaje a Japón
