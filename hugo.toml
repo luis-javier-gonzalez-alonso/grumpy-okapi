@@ -22,7 +22,7 @@ theme = 'hello-friend-ng'
   enableGlobalLanguageMenu = true
 
   # Metadata mostly used in document's head
-  description = "My blog"
+  description = "Wondering & wandering"
   keywords = "blog"
   images = [""]
 
@@ -55,13 +55,13 @@ theme = 'hello-friend-ng'
   # And you can even create generic menu
   [[menu.main]]
     identifier = "blog"
-    name       = "Blog"
+    name       = "Posts"
     url        = "/posts"
-  [[menu.main]]
-    identifier = "tags"
-    name       = "Topics"
-    url        = "/tags"
   [[menu.main]]
     identifier = "series"
     name       = "Series"
     url        = "/series"
+  [[menu.main]]
+    identifier = "tags"
+    name       = "Tags"
+    url        = "/tags"
