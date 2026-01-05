@@ -21,4 +21,4 @@ tags:
 -
 
 ## 📸 Fotos / Referencias
--
+{{< image src="/imgs/img.png" alt="Gorgeous lady" position="center" style="border-radius: 8px; border-width: 2px; border-color: white; max-width: 300px; max-height: 500px;" >}}
