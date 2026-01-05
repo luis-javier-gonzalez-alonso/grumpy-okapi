@@ -1,6 +1,6 @@
 baseURL = 'https://blog.ljga.net'
 languageCode = 'en-gb'
-title = '/ˈtɛknɪkəl ˈraɪtɪŋ/'
+title = 'LJGA // Blog'
 theme = 'hello-friend-ng'
 
 [params]
@@ -10,7 +10,7 @@ theme = 'hello-friend-ng'
   dateformNumTime = "2006-01-02 15:04"
 
   # Subtitle for home
-  homeSubtitle = "Notes for myself and whoever may find them useful"
+#  homeSubtitle = "Notes for myself and whoever may find them useful"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -19,11 +19,11 @@ theme = 'hello-friend-ng'
   enableSharingButtons = false
   
   # Show a global language switcher in the navigation bar
-  enableGlobalLanguageMenu = false
+  enableGlobalLanguageMenu = true
 
   # Metadata mostly used in document's head
-  description = "My new homepage or blog"
-  keywords = "homepage, blog"
+  description = "My blog"
+  keywords = "blog"
   images = [""]
 
 [taxonomies]
@@ -33,7 +33,10 @@ theme = 'hello-friend-ng'
 
 [languages]
   [languages.en]
-    title = "/ˈtɛknɪkəl ˈraɪtɪŋ/"
+    params.homeSubtitle = "Notes on building, learning, and wandering"
+  [languages.es]
+    languageCode = "es-ES"
+    params.homeSubtitle = "Apuntes de crear, aprender y vagabundear"
 #    keywords = ""
 #    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 #    readOtherPosts = "Read other posts"
@@ -52,7 +55,7 @@ theme = 'hello-friend-ng'
   # And you can even create generic menu
   [[menu.main]]
     identifier = "blog"
-    name       = "Content"
+    name       = "Blog"
     url        = "/posts"
   [[menu.main]]
     identifier = "tags"
