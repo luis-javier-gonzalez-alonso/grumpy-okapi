@@ -29,8 +29,8 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## Checkpoint (the “base model”)
 
-**What it is:** The main trained model file.
-**What it controls:** Overall style capability, knowledge, anatomy quality, aesthetics, and what it “knows how to draw”.
+**What it is:** The main trained model file.<br>
+**What it controls:** Overall style capability, knowledge, anatomy quality, aesthetics, and what it “knows how to draw”.<br>
 **When you change it:** When you want a different *foundation* (photoreal vs anime, SD1.5 vs SDXL, etc.).
 
 **Rule of thumb:** Pick a checkpoint that already leans toward your target style. Everything else is a modifier.
@@ -39,8 +39,8 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## VAE (Variational Autoencoder)
 
-**What it is:** The component that converts between the model’s internal “latent” space and actual pixels.
-**What it controls:** Color richness, contrast, fine detail feel, and sometimes weird artifacts (washed-out, gray, banding).
+**What it is:** The component that converts between the model’s internal “latent” space and actual pixels.<br>
+**What it controls:** Color richness, contrast, fine detail feel, and sometimes weird artifacts (washed-out, gray, banding).<br>
 **When you change it:** When images look “off” (muted colors, muddy contrast) or a checkpoint recommends a specific VAE.
 
 **Rule of thumb:** If your images look flat or odd-colored, VAE mismatch is a common culprit.
@@ -49,8 +49,8 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## CLIP / Text Encoder
 
-**What it is:** The “language understanding” part that turns your prompt into something the model can follow.
-**What it controls:** How well prompt words map to visual concepts, prompt sensitivity, and token weighting behavior.
+**What it is:** The “language understanding” part that turns your prompt into something the model can follow.<br>
+**What it controls:** How well prompt words map to visual concepts, prompt sensitivity, and token weighting behavior.<br>
 **When you change it:** Usually you don’t—except with certain pipelines/models (some have custom text encoders).
 
 **Rule of thumb:** If the model “doesn’t get” your prompt, it’s often the checkpoint/text-encoder combo, not you.
@@ -59,9 +59,9 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## LoRA (Low-Rank Adaptation)
 
-**What it is:** A small add-on that nudges the checkpoint toward a specific style, character, outfit, technique, or subject.
-**What it controls:** Targeted changes without replacing the whole checkpoint.
-**How it’s used:** Loaded with a **weight** (strength), e.g. 0.4–1.0 commonly (varies a lot).
+**What it is:** A small add-on that nudges the checkpoint toward a specific style, character, outfit, technique, or subject.<br>
+**What it controls:** Targeted changes without replacing the whole checkpoint.<br>
+**How it’s used:** Loaded with a **weight** (strength), e.g. 0.4–1.0 commonly (varies a lot).<br>
 **When you use it:** When you want a specific style/character/detail reliably.
 
 **Rule of thumb:** LoRAs are “specialised lenses.” Great for consistency; too strong can distort or overpower.
@@ -70,8 +70,8 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## Embedding / Textual Inversion
 
-**What it is:** A learned “new word” (token) that represents a concept/style.
-**What it controls:** Injects a concept via the prompt with a token like `myStyleToken`.
+**What it is:** A learned “new word” (token) that represents a concept/style.<br>
+**What it controls:** Injects a concept via the prompt with a token like `myStyleToken`.<br>
 **When you use it:** For small style nudges, specific looks, or negative embeddings (e.g., to reduce bad anatomy).
 
 **Rule of thumb:** Embeddings are prompt-based mini-skills; LoRAs are usually stronger and broader.
@@ -80,8 +80,8 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## ControlNet (structure control)
 
-**What it is:** A guidance system that forces the generation to follow a structural input.
-**What it controls:** Pose, composition, edges, depth, lineart, segmentation, etc.
+**What it is:** A guidance system that forces the generation to follow a structural input.<br>
+**What it controls:** Pose, composition, edges, depth, lineart, segmentation, etc.<br>
 **Typical inputs:** A reference image processed into:
 - **OpenPose** (body pose),
 - **Canny/edges** (composition outlines),
@@ -94,8 +94,8 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## Img2Img (image-to-image)
 
-**What it is:** You start from an existing image instead of pure noise.
-**What it controls:** Keeps some composition while transforming style/details.
+**What it is:** You start from an existing image instead of pure noise.<br>
+**What it controls:** Keeps some composition while transforming style/details.<br>
 **Key setting:** **Denoise strength** (how much it changes).
 - Low denoise → preserves original more
 - High denoise → more freedom / more change
@@ -106,8 +106,8 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## Inpainting (edit part of an image)
 
-**What it is:** Img2img but only in a masked area.
-**What it controls:** Fix hands/face, change outfits, replace background objects, etc.
+**What it is:** Img2img but only in a masked area.<br>
+**What it controls:** Fix hands/face, change outfits, replace background objects, etc.<br>
 **When you use it:** When “almost perfect” images need targeted repair.
 
 **Rule of thumb:** Generate broadly → then inpaint to polish.
@@ -116,8 +116,8 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## Sampler (how denoising steps are taken)
 
-**What it is:** The algorithm guiding the denoise process across steps.
-**What it controls:** Sharpness vs smoothness, consistency, speed, “feel” of results.
+**What it is:** The algorithm guiding the denoise process across steps.<br>
+**What it controls:** Sharpness vs smoothness, consistency, speed, “feel” of results.<br>
 **When you change it:** When results are too noisy, too soft, or inconsistent.
 
 **Rule of thumb:** Sampler choice matters, but less than checkpoint + prompt + guidance.
@@ -126,15 +126,16 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## Steps
 
-**What it is:** How many denoising iterations you run.
-**What it controls:** Detail, coherence, and compute time.
+**What it is:** How many denoising iterations you run.<br>
+**What it controls:** Detail, coherence, and compute time.<br>
+
 **Rule of thumb:** Too few → messy; too many → diminishing returns (and can overcook).
 
 ---
 
 ## CFG Scale (prompt strength)
 
-**What it is:** How strongly the model is forced to follow the prompt.
+**What it is:** How strongly the model is forced to follow the prompt.<br>
 **What it controls:** Literalness vs naturalness.
 - Low CFG → more artistic/loose
 - High CFG → more literal, but can cause artifacts or “burnt” look
@@ -145,7 +146,7 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## Seed (repeatability)
 
-**What it is:** The random starting point for noise.
+**What it is:** The random starting point for noise.<br>
 **What it controls:** Reproducibility.
 - Same seed + same settings → similar image
 - Change seed → new variations
@@ -156,8 +157,9 @@ The generator starts from noise and “denoises” it into an image. The terms b
 
 ## Negative prompt (what to avoid)
 
-**What it is:** A prompt for undesired traits.
+**What it is:** A prompt for undesired traits.<br>
 **What it controls:** Reduces common artifacts (bad hands, extra limbs, text, watermark, etc.).
+
 **Rule of thumb:** Keep it practical; huge negative lists can sometimes fight your positives.
 
 ---
