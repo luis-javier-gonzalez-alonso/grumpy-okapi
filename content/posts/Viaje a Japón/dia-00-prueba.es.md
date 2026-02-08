@@ -1,7 +1,7 @@
 ---
 title: Prueba día 00
 date: '2026-02-08T01:02:29.550289'
-draft: true
+draft: false
 tags: [Viaje, Japón, Ciudad]
 ---
 
