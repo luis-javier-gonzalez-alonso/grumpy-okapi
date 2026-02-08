@@ -1,7 +1,7 @@
 ---
 title: Prueba día 00
 date: '2026-02-08T01:02:29.550289'
-draft: false
+draft: true
 tags: [Viaje, Japón, Ciudad]
 ---
 
@@ -16,5 +16,3 @@ tags: [Viaje, Japón, Ciudad]
 
 ## 📸 Fotos / Referencias
 {{< image src="/imgs/img.png" alt="Gorgeous lady" position="center" style="border-radius: 8px; border-width: 2px; border-color: white; max-width: 300px; max-height: 500px;" >}}
-
-{{< image src="/imgs/1770515560627_1000040093.jpg" alt="Gorgeous lady" position="center" style="border-radius: 8px; border-width: 2px; border-color: white; max-width: 300px; max-height: 500px;" >}}
