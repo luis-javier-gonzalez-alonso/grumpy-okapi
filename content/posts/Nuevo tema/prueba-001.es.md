@@ -1,7 +1,7 @@
 ---
 title: prueba 001
 date: '2026-02-08T02:35:24.842094'
-draft: true
+draft: false
 tags: [a, b, c]
 ---
 
